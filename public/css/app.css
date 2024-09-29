@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    flex-direction: column; /* Ajuste para colunas em telas menores */
+    min-height: 100vh;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #343a40;
+    padding: 15px;
+}
+
+.sidebar a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.sidebar a:hover {
+    background-color: #495057;
+}
+
+.content {
+    margin-left: 260px; /* Largura do sidebar + um pequeno espaço */
+    padding: 20px;
+    width: calc(100% - 260px); /* Certifica-se que o conteúdo não ultrapasse a tela */
+}
+
+/* Media query para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%; /* Sidebar ocupa 100% da largura em telas menores */
+        position: relative; /* Sidebar não será fixa em telas pequenas */
+        height: auto;
+    }
+
+    .content {
+        margin-left: 0; /* Remove o deslocamento da margem esquerda */
+        width: 100%; /* Conteúdo ocupa 100% da largura da tela */
+    }
+}
