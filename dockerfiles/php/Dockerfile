@@ -21,6 +21,8 @@ WORKDIR /var/www
 
 COPY . .
 
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
 RUN chmod -R 775 storage
 
 EXPOSE 9000
