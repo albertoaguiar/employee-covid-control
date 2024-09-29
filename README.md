@@ -35,3 +35,7 @@
 ## Relatórios
 Para realizar a extração do relatório de não vacinados com nome e CPF é necessário realizar o dispatch acessando o link **http://localhost/reports/unvaccinated**
 Quando bem sucedido, o arquivo se encontrará em **storage/app/reports**.
+
+## Informações adicionais
+- Para entender como utilizar o sistema [clique aqui](https://github.com/albertoaguiar/feegow/blob/main/documento_utilizacao_feegow.pdf).
+- Para entender a estrutura de banco de dados (tabelas e colunas) [clique aqui](https://github.com/albertoaguiar/feegow/blob/main/database_model.pdf).
