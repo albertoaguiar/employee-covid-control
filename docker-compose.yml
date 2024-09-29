@@ -1,0 +1,40 @@
+services:
+  application:
+    build:
+      context: .
+      dockerfile: dockerfiles/php/Dockerfile
+    image: application
+    container_name: application
+    tty: true
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/var/www
+    networks:
+      - feegow
+  db:
+    image: mysql
+    container_name: db
+    restart: always
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+    networks:
+      - feegow
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - .:/var/www
+      - ./dockerfiles/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - feegow
+networks:
+  feegow:
+    driver: bridge
