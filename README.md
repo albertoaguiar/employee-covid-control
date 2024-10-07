@@ -9,7 +9,7 @@
 1. **Clone o repositório**:
    ```bash
    git clone https://github.com/albertoaguiar/employee-covid-control.git
-   cd feegow
+   cd employee-covid-control
    ```
 
 2. **Construa e inicie os containers**:
